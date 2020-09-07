@@ -1,4 +1,5 @@
 # NorthwindNg
+<<<<<<< HEAD
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
 
@@ -25,3 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+This Angular demonstration project was created using Visual Studio Code 1.48.21, Angular 10.0.8, and Node v14.5.0. The objective is to demonstrate Angular CRUD functionality against the NorthwindWebApi project.
+>>>>>>> a2fcb3858b79d89dfb86a4b0829fa9df4e54dbe4
