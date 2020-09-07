@@ -1,0 +1,28 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="shipperId" [value]="service.formData.shipperId">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-truck" [class.green-icon]="companyName.valid" [class.red-icon]="companyName.invalid && companyName.touched"></i>
+                </div>
+            </div>
+            <input name="companyName" #companyName="ngModel" [(ngModel)]="service.formData.companyName" class="form-control"
+            placeholder="Company Name" required maxlength="40">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-phone"  [class.green-icon]="phone.valid" [class.red-icon]="phone.invalid && phone.touched"></i>
+                </div>
+            </div>
+            <input name="phone" #phone="ngModel" [(ngModel)]="service.formData.phone" 
+            class="form-control" placeholder="9 Digit Phone Number" required maxlength="24" minlength="9">
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-save"></i> Submit</button>
+    </div>    
+</form>

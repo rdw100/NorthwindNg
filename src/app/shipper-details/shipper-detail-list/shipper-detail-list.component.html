@@ -1,0 +1,16 @@
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Company Name</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tr *ngFor="let sd of service.list">
+        <td (click)="populateForm(sd)">{{sd.companyName}}</td>
+        <td (click)="populateForm(sd)">{{sd.phone}}</td>
+        <td>
+            <i class="far fa-times-circle fa-lg text-danger" (click)="onDelete(sd.shipperId)"></i>
+        </td>
+    </tr>
+</table>

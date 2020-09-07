@@ -1,0 +1,17 @@
+● src
++---● app
+|   +--● shipper-details
+|   |  |--shipper-details.component.ts|.html|.css
+|   |  +--● shipper-detail
+|   |     |--shipper-detail.component.ts|.html|.css
+|   |  |
+|   |  +--● shipper-detail-list
+|   |     |--shipper-detail-list.component.ts|.html|.css
+|   |  
+|   +--● shared
+|   |     |--shipper-detail.service.ts
+|   |     |--shipper-detail.model.ts
+|   |
+|   |--app.module.ts
+|
+|--index.html
