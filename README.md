@@ -11,4 +11,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ### Demonstration
 Create, Read, Update, and Delete operations are performed in the animated GIF below:
-![Recordit GIF](https://github.com/rdw100/NorthwindNg/blob/master/NorthwindNg/src/assets/img/yJOo6FL3eT.gif?raw=true?raw=true)
+![Recordit GIF](https://github.com/rdw100/NorthwindNg/blob/master/src/assets/img/yJOo6FL3eT.gif?raw=true)
