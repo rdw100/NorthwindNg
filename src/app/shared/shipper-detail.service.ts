@@ -13,24 +13,26 @@ export class ShipperDetailService {
 
   constructor(private http: HttpClient) { }
 
-  postShipperDetail() {
+  async postShipperDetail() {
     return this.http.post(this.rootURL + 'shippers', this.formData);
   }
 
-  putShipperDetail() {
+  async putShipperDetail() {
     return this.http.put(this.rootURL + 'shippers/' + this.formData.shipperId, this.formData);
   }
   
-  deleteShipperDetail(id) {
+  async deleteShipperDetail(id) {    
     return this.http.delete(this.rootURL + 'shippers/' + id);
   }
 
   async refreshList(){
-    await this.http.get(this.rootURL + 'shippers')
-    .toPromise()
-    .then(res => this.list = res as ShipperDetail[])
-    .catch(err => { 
-                    console.log ('error');
-                  });
+    try {
+      let res = await this.http.get(this.rootURL + 'shippers')
+        .toPromise()
+        .then(res => this.list = res as ShipperDetail[]);
+      return res;
+    } catch (error) {
+      console.log ('error');
+    }
   }
 }

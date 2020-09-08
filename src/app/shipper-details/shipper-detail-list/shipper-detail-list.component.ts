@@ -22,9 +22,9 @@ export class ShipperDetailListComponent implements OnInit {
     this.service.formData = Object.assign({}, sd);
   }
 
-  onDelete(shipperId: Number) {
-    if (confirm('Are you sure to delete this record ?')) {
-      this.service.deleteShipperDetail(shipperId)
+  async onDelete(shipperId: Number) {
+    if (confirm('Delete record?')) {
+      (await this.service.deleteShipperDetail(shipperId))
         .subscribe(res => {
           this.service.refreshList();
           this.toastr.warning('Deleted Successfully', 'Shipper Detail Register');

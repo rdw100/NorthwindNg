@@ -22,8 +22,8 @@ export class ShipperDetailComponent implements OnInit {
       this.updateRecord(form);
   }
   
-  updateRecord(form: NgForm) {
-    this.service.putShipperDetail().subscribe(
+  async updateRecord(form: NgForm) {
+    (await this.service.putShipperDetail()).subscribe(
       res => {
         this.resetForm(form);
         this.toastr.info('Updated successfully','Shipper Detail Register');
@@ -35,8 +35,8 @@ export class ShipperDetailComponent implements OnInit {
     )
   }
 
-  insertRecord(form: NgForm) {
-    this.service.postShipperDetail().subscribe(
+  async insertRecord(form: NgForm) {
+    (await this.service.postShipperDetail()).subscribe(
       res => {
         this.resetForm(form);
         this.toastr.success('Submitted successfully','Shipper Detail Register');
@@ -59,14 +59,4 @@ export class ShipperDetailComponent implements OnInit {
       phone: ''
     }
   }  
-  
-  onDelete(ShipperId: Number) {
-    if (confirm('Are you sure to delete this record ?')) {
-      this.service.deleteShipperDetail(ShipperId)
-        .subscribe(res => {
-          this.service.refreshList();
-        },
-        err => { console.log(err); })
-    }
-  }
 }
